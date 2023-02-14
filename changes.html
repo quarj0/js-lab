@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Styles start -->
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      body {
+        background-color: #f1ecec;
+        font-family: sans-serif;
+      }
+      #days {
+        padding: 16px 24px;
+        margin-top: 6rem;
+        margin-bottom: 10%;
+      }
+      #month {
+        padding: 16px 24px;
+        margin-bottom: 54px;
+      }
+      .monthbtn {
+        background-color: #da1709;
+        border: 1px solid #f3eeee;
+        padding: 16px 24px;
+        margin-bottom: 54px;
+        text-decoration: solid;
+        font-size: medium;
+        font-family: "Poppins", serif;
+        color: #f3eeee;
+        border-radius: 1.5rem;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .daybtn {
+        background-color: #da1709;
+        border: 1px solid #f3eeee;
+        padding: 16px 24px;
+        margin: 0 24px 54px 0;
+        text-decoration: solid;
+        font-size: medium;
+        font-family: "Poppins", serif;
+        color: #f3eeee;
+        border-radius: 1.5rem;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+    </style>
+    <!-- Styles ends -->
+    <!-- Hmtl codes starts -->
+    <h1 class="days" id="days">Monday</h1>
+    <h1 class="month" id="month">January</h1>
+    <button class="daybtn" id="daybtn" onclick="changeDay()">Change day</button>
+    <button class="monthbtn" id="monthbtn" onclick="changeMonth()">
+      Change month
+    </button>
+    <!-- Hmtl codes ends -->
+
+    <!-- Script Start -->
+    <script type="text/javascript">
+      var days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      function changeDay(){
+      var days = document.getElementById("days").innerHTML;
+         var days_index = days_of_week.indexOf(days);
+         if (days_index === days_of_week.length -1){
+            var nextDay = days_of_week[0];
+         }else{
+            var nextDay = days_of_week[days_index +1];
+         }
+         document.getElementById("days").innerHTML = nextDay;
+    
+      }
+      function changeMonth(){
+        var months_of_year = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          var currentMonth = document.getElementById("month").innerHTML;
+            var month_index = months_of_year.indexOf(currentMonth);
+            if (month_index === months_of_year.length -1){
+              var nextMonth = months_of_year[0];
+            }else{
+                var nextMonth = months_of_year[month_index +1];
+                }
+                document.getElementById("month").innerHTML = nextMonth;
+          
+         
+      }
+    </script>
+    <!-- Script Ends-->
+  </body>
+</html>
